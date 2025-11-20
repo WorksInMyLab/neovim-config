@@ -5,7 +5,14 @@ return {
             require("nvim-treesitter.configs").setup({
                 -- List of parser names
                 ensure_installed = {
-                    "bash", "c", "cpp", "doxygen", "lua", "meson", "rust", "toml",
+                    "bash",
+                    "c",
+                    "cpp",
+                    "doxygen",
+                    "lua",
+                    "meson",
+                    "rust",
+                    "toml",
                 },
 
                 -- Install parsers synchronously (only applied to 'ensured_installed')
@@ -43,16 +50,15 @@ return {
                     -- Using this option may slow down your editor, and you may see some duplicate highlights.
                     -- Instead of true it can also be a list of languages
                     additional_vim_regex_highlighting = { "markdown" },
-
                 },
             })
-        end
+        end,
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
         after = "nvim-treesitter",
         config = function()
-            require 'treesitter-context'.setup {
+            require("treesitter-context").setup({
                 -- Enable the plugin
                 enable = true,
                 -- Multi window support
@@ -65,16 +71,16 @@ return {
                 -- Maximum number of lines to show for a single context
                 multiline_threshold = 20,
                 -- Which context lines to discard if 'max_lines' is exceded. Choices: 'inner', 'outer'
-                trim_scope = 'outer',
+                trim_scope = "outer",
                 -- Line used to calculate context. Choices: 'cursor', 'topline'
-                mode = 'cursor',
+                mode = "cursor",
                 -- Separator between context and content. Should be a single character string, like '-'.
                 separator = nil,
                 -- The Z-index of contetxt window
                 zindex = 20,
                 -- (fun(buf: integer): boolean) return false to disable attaching
                 on_attach = nil,
-            }
-        end
-    }
+            })
+        end,
+    },
 }
