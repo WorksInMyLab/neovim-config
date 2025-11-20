@@ -11,4 +11,5 @@ This repository contains my first neovim config. I'm following along ThePrimeage
 | :----- | :---------- |
 | [lazy](https://github.com/folke/lazy.nvim) | Plugin Manager |
 | [telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
+| [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Parsing and Highlighting |
 | [tokyonight](https://github.com/folke/tokyonight.nvim) | Dark Theme |
