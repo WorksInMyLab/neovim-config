@@ -10,3 +10,4 @@ This repository contains my first neovim config. I'm following [ThePrimeagen's n
 | Plugin | Description |
 | :----- | :---------- |
 | [lazy](https://github.com/folke/lazy.nvim) | Plugin Manager |
+| [telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
