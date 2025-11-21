@@ -11,7 +11,9 @@ This repository contains my first Neovim config. I'm following along ThePrimeage
 | :----- | :---------- |
 | [lazy](https://github.com/folke/lazy.nvim) | Plugin Manager |
 | [telescope](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy Finder |
+| [plenary](https://github.com/nvim-lua/plenary.nvim) | Lua Functions |
 | [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Parsing and Highlighting |
+| [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | Show Code Context |  |
 | [harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2) | Fast File/Terminal Switcher |
 | [undotree](https://github.com/mbbill/undotree) | Undo History |
 | [vim-fugitive](https://github.com/tpope/vim-fugitive) | git Plugin |
