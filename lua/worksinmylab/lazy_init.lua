@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "worksinmylab.lazy",
+    spec = "worksinmylab.plugins",
     change_detection = { notify = false },
     {
         "nvim-treesitter/nvim-treesitter",

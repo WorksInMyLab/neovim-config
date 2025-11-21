@@ -11,23 +11,26 @@ return {
         "hrsh7th/nvim-cmp", -- completion engine plugin
         "L3MON4D3/LuaSnip", -- snippet engine
         "saadparwaiz1/cmp_luasnip", -- luasnip completion source for nvim-cmp
-        "j-hui/fidget.nvim", -- extensible UI for Neovim notifications and LSP progress messages
     },
-
-    config = function()
+    opts = {
+        servers = {
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            },
+        },
+    },
+    config = function(_, opts)
         require("conform").setup({
             formatters_by_ft = {},
         })
         local cmp = require("cmp")
-        local cmp_lsp = require("cmp_nvim_lsp")
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities()
-        )
 
-        require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -35,34 +38,11 @@ return {
                 "rust_analyzer",
                 "clangd",
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup({
-                        capabilities = capabilities,
-                    })
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup({
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                format = {
-                                    enable = true,
-                                    -- put format options here
-                                    -- NOTE: the value should be STRING!!
-                                    defaultConfig = {
-                                        indent_style = "space",
-                                        indent_size = "2",
-                                    },
-                                },
-                            },
-                        },
-                    })
-                end,
-            },
         })
+
+        for server, config in pairs(opts.servers) do
+            vim.lsp.config(server, config)
+        end
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -87,15 +67,8 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-            },
+            virtual_text = true,
+            underline = true,
         })
     end,
 }
