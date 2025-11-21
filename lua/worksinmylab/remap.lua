@@ -1,20 +1,26 @@
+-- file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- move selection
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- center buffer when navigating up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- greatest remap ever according to the Primeagen
+-- greatest remaps ever according to the Primeagen
+-- paste without replacing paste with highlight
 vim.keymap.set("x", "<leader>p", '"_dP')
+-- mass replace string in file
 vim.keymap.set(
     "n",
     "<leader>s",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 )
+-- make file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
