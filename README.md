@@ -27,4 +27,5 @@ This repository contains my first Neovim config. I'm following along ThePrimeage
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet Engine Plugin |
 | [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | luasnip completion source for nvim-cmp |
 | [fidget](https://github.com/j-hui/fidget.nvim) | Extensible UI for Neovim notifications and LSP progress messages |
+| [neogen](https://github.com/danymat/neogen) | Annotation Generator |
 | [tokyonight](https://github.com/folke/tokyonight.nvim) | Dark Theme |
