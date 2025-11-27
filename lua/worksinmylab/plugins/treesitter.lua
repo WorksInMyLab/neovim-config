@@ -3,7 +3,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("nvim-treesitter.configs").setup({
-                -- List of parser names
+                -- list of parser names
                 ensure_installed = {
                     "bash",
                     "c",
@@ -15,10 +15,10 @@ return {
                     "toml",
                 },
 
-                -- Install parsers synchronously (only applied to 'ensured_installed')
+                -- install parsers synchronously (only applied to 'ensured_installed')
                 sync_install = false,
 
-                -- Automagically install missing parsers
+                -- automagically install missing parsers
                 auto_install = false,
 
                 indent = {
@@ -48,10 +48,10 @@ return {
                             return true
                         end
                     end,
-                    -- Setting this to true will run ':h syntax`'and tree-sitter at the same time.
-                    -- Set this to 'true' if you depend on "syntax" being enabled (like for indentation).
-                    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-                    -- Instead of true it can also be a list of languages
+                    -- setting this to true will run ':h syntax`'and tree-sitter at the same time.
+                    -- set this to 'true' if you depend on "syntax" being enabled (like for indentation).
+                    -- using this option may slow down your editor, and you may see some duplicate highlights.
+                    -- instead of true it can also be a list of languages
                     additional_vim_regex_highlighting = { "markdown" },
                 },
             })
@@ -62,24 +62,24 @@ return {
         after = "nvim-treesitter",
         config = function()
             require("treesitter-context").setup({
-                -- Enable the plugin
+                -- enable the plugin
                 enable = true,
-                -- Multi window support
+                -- multi window support
                 multiwindow = false,
-                -- How many lines the window should span. Values <=0 mean no limit
+                -- how many lines the window should span. Values <=0 mean no limit
                 max_lines = 0,
-                -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+                -- minimum editor window height to enable context. Values <= 0 mean no limit.
                 min_window_height = 0,
                 line_numbers = true,
-                -- Maximum number of lines to show for a single context
+                -- maximum number of lines to show for a single context
                 multiline_threshold = 20,
-                -- Which context lines to discard if 'max_lines' is exceded. Choices: 'inner', 'outer'
+                -- which context lines to discard if 'max_lines' is exceded. Choices: 'inner', 'outer'
                 trim_scope = "outer",
-                -- Line used to calculate context. Choices: 'cursor', 'topline'
+                -- line used to calculate context. Choices: 'cursor', 'topline'
                 mode = "cursor",
-                -- Separator between context and content. Should be a single character string, like '-'.
+                -- separator between context and content. Should be a single character string, like '-'.
                 separator = nil,
-                -- The Z-index of contetxt window
+                -- the Z-index of contetxt window
                 zindex = 20,
                 -- (fun(buf: integer): boolean) return false to disable attaching
                 on_attach = nil,
