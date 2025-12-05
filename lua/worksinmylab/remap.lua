@@ -11,6 +11,11 @@ vim.keymap.set("n", "<C-u>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- lua
+vim.keymap.set("n", "<leader><space>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<leader>x", ":.lua<CR>")
+vim.keymap.set("v", "<leader>x", ":lua<CR>")
+
 -- greatest remaps ever according to the Primeagen
 -- paste without replacing paste with highlight
 vim.keymap.set("x", "<leader>p", '"_dP')
@@ -21,7 +26,7 @@ vim.keymap.set(
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 )
 -- make file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sx", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
     -- use LspAttach autocommand to only map the following keys after the
