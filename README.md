@@ -1,5 +1,8 @@
 # My Neovim Config
-This repository contains my first Neovim config. I'm following along ThePrimeagen's Neovim tutorial [0 to LSP: Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE). 
+This repository contains my first Neovim config. It's based on ThePrimeagen's Neovim tutorial [0 to LSP: Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
+and TJ DeVries [Advent of nvim](https://www.youtube.com/watch?v=TQn2hJeHQbM&list=PLep05UYkc6wTyBe7kPjQFWVXTlhKeQejM&index=1).
+
+Both are really good starting points for your first neovim config.
 
 ## Why?
 - I like vim
